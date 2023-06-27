@@ -2,4 +2,143 @@
 --
 -- Host: localhost    Database: marvelcars
 -- ------------------------------------------------------
--- Server version	8.0.33
+---------------- Table structure ---------------
+
+CREATE TABLE branch (
+  bid int NOT NULL,
+  address varchar(20) NOT NULL,
+  city varchar(20) NOT NULL
+) 
+
+select * from branch;
+
+CREATE TABLE cars (
+  brand varchar(20) NOT NULL,
+  model varchar(20) NOT NULL,
+  mfd_year int NOT NULL,
+  fuel varchar(15) NOT NULL,
+  price int NOT NULL
+)
+
+select * from cars;
+
+CREATE TABLE customers (
+  cusid int NOT NULL,
+  name varchar(30) NOT NULL,
+  city varchar(20) NOT NULL,
+  mobile char(10) NOT NULL
+) 
+
+select * from customers;
+
+CREATE TABLE employee (
+  empid int NOT NULL,
+  bid int NOT NULL,
+  name varchar(30) NOT NULL,
+  salary int NOT NULL
+) 
+
+select * from employee;
+
+CREATE TABLE sales (
+  bid int NOT NULL,
+  cusid int NOT NULL,
+  empid int NOT NULL,
+  brand varchar(20) NOT NULL,
+  saleamt int NOT NULL
+)
+
+select * from sales;
+
+------------End of Creating Tables-------------      
+
+-----------Inserting Values---------------------
+
+INSERT INTO branch VALUES (101,'rknagar','chennai'),
+                          (102,'methanagar','bangalore'),
+                          (103,'defence colony','trichy'),
+                          (104,'metur nagar','bangalore'),
+                          (105,'aryapurm','chennai'),
+                          (106,'surabicolony','chennai'),
+                          (107,'manikamnagar','trichy'),
+                          (108,'skrcenter','chennai'),
+                          (109,'chimiyanagar','bangalore'),
+                          (110,'ellisroad','bangalore');
+
+INSERT INTO cars VALUES ('audi','a4',2013,'petrol',3000000),
+                        ('audi','a8',2017,'petrol',4000000),
+                        ('audi','q2',2020,'petrol',6000000),
+                        ('bmw','5series',2019,'petrol',3500000),
+                        ('bmw','7 series',2020,'petrol',5200000),
+                        ('bmw','m5',2022,'petrol',7700000),
+                        ('honda','amaze',2017,'petrol',700000),
+                        ('honda','civic',2019,'diesel',900000),
+                        ('mahendra','xuv500',2020,'diesel',750000),
+                        ('tata','altroz',2019,'diesel',500000),
+                        ('tata','nexon',2020,'petrol',700000),
+                        ('tata','tiago',2022,'petrol',650000),
+                        ('toyato','innova crysta',2020,'diesel',1200000);
+
+INSERT INTO customers VALUES (9816,'sultan','chennai','8030050098'),
+                            (9128,'kevin','kodai','9941003345'),
+                            (9118,'sai','ooty','9710222765'),
+                            (9171,'mahi','coimbatore','9812877878'),
+                            (9112,'vishnu','chennai','9822371865'),
+                            (9177,'saran','bangalore','9841786512'),
+                            (9111,'saravana',' trichy','9726675467'),
+                            (9967,'sufi','chennai','9787542876'),
+                            (9331,'sarathy','bangalore','9182726383'),
+                            (9456,'sathish','pune','9167667321'),
+                            (9254,'kesav','kerala','9103452555'),
+                            (9911,'kapil','chennai','9987786556'),
+                            (9999,'swathi','trichy','7841878877'),
+                            (9333,'anu','bangalore','7876565565'),
+                            (9711,'sara','kodai','7841600600'),
+                            (9666,'santhosh','bangalore','7861898899'),
+                            (9555,'sibu','trichy','9187225676'),
+                            (9888,'vijay','chennai','8030993456'),
+                            (9339,'ajith','coimbatore','8939002345');
+
+INSERT INTO employee VALUES (1382,101,'ajay',12000),
+                            (1827,101,'kishore',11000),
+                            (2182,102,'guru',14500),
+                            (1918,102,'shankar',13500),
+                            (1822,103,'mani',14500),
+                            (1716,103,'sri',15500),
+                            (1228,104,'sam',14000),
+                            (2871,104,'karthi',11000),
+                            (1972,105,'prathap',12000),
+                            (2333,105,'parthi',18500),
+                            (2117,106,'pravin',19000),
+                            (1232,106,'sarvesh',13500),
+                            (1122,107,'venkat',16000),
+                            (1119,107,'khan',18599),
+                            (2267,108,'jai',18000),
+                            (1566,108,'balaji',12000),
+                            (1723,109,'muthu',13000),
+                            (1339,109,'kishan',19000),
+                            (1239,110,'lokesh',15000),
+                            (1991,110,'suresh',14000);
+
+INSERT INTO sales VALUES (101,9177,1382,'bmw',3500000),
+                        (101,9333,1382,'audi',3000000),
+                        (101,9331,1827,'toyato',1200000),
+                        (101,9911,1382,'honda',700000),
+                        (102,9118,2182,'honda',700000),
+                        (102,9171,1918,'honda',900000),
+                        (102,9111,2182,'tata',650000),
+                        (103,9118,1822,'audi',6000000),
+                        (104,9967,1228,'toyota',1200000),
+                        (104,9555,2871,'honda',700000),
+                        (105,9888,1972,'tata',700000),
+                        (105,9171,2333,'tata',500000),
+                        (105,9816,2333,'tata',650000),
+                        (106,9118,2117,'mahendra',750000),
+                        (106,9112,2117,'audi',6000000),
+                        (107,9456,1119,'bmw',7700000),
+                        (108,9254,2267,'audi',4000000),
+                        (108,9711,1566,'tata',500000),
+                        (110,9666,1239,'bmw',7700000),
+                        (110,9331,1991,'audi',6000000);
+
+----------------------End of Inserting Values-------------------
